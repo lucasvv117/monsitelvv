@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Premier Site</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Comparaison des LLM - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Bienvenue sur mon site</h1>
-    <p>Ceci est mon premier site créé avec HTML et CSS, hébergé sur GitHub Pages. Allez Arsenal</p>
+    <header class="header">
+        <div class="logo">
+            <h1>Comparateur LLM</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Comparaison</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="overlay">
+                <h2>Découvrez et comparez les meilleurs modèles de langage</h2>
+                <p>Trouvez le modèle qui correspond le mieux à vos besoins en IA.</p>
+                <button class="cta-button">Commencer la comparaison</button>
+            </div>
+        </section>
+
+        <section class="carrousel-section">
+            <h2>Les modèles populaires</h2>
+            <div class="carrousel">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="GPT-4">
+                    <h3>GPT-4</h3>
+                    <p>Un modèle puissant conçu par OpenAI, idéal pour des tâches complexes.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="BERT">
+                    <h3>BERT</h3>
+                    <p>Conçu par Google, BERT excelle dans la compréhension des contextes linguistiques.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="LLaMA">
+                    <h3>LLaMA</h3>
+                    <p>Meta AI a développé LLaMA, un modèle compact mais performant.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" alt="Claude">
+                    <h3>Claude</h3>
+                    <p>Anthropic a créé Claude pour mettre en avant des capacités de raisonnement.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Comparateur LLM. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

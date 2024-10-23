@@ -1,14 +1,131 @@
+/* Réinitialisation des styles par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #141414;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: red;
+}
+
+.navigation ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navigation ul li {
+  margin-right: 20px;
+}
+
+.navigation ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-content {
   padding: 20px;
 }
 
-h1 {
-  color: #ff0000;
+.hero {
+  position: relative;
+  background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-p {
-  color: #666;
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+}
+
+.overlay h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: darkred;
+}
+
+.carrousel-section {
+  margin: 40px 0;
+}
+
+.carrousel-section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.carrousel {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+}
+
+.card {
+  background-color: #1c1c1c;
+  padding: 20px;
+  width: 200px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.footer {
+  background-color: #1c1c1c;
+  padding: 20px;
+  text-align: center;
+  color: #b3b3b3;
+  margin-top: 40px;
 }
