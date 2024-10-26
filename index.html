@@ -256,9 +256,6 @@
         </nav>
     </header>
 
-        <div id="LLMs"></div>
-        <script src="script.js"></script>
-
     <main class="main-content">
         <section class="hero">
             <div class="overlay">
@@ -361,6 +358,24 @@
                 }
             });
         });
-    </script>
+    
+
+<div id="llms"></div>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://localhost:3001/LLMs')
+            .then(response => response.json())
+            .then(data => {
+                const llmsContainer = document.getElementById('llms');
+                data.forEach(llm => {
+                    const llmDiv = document.createElement('div');
+                    llmDiv.textContent = `Nom: ${llms.Nom}, Propriétaire: ${llms.Owner}, Création: ${new Date(llms.Création).toLocaleDateString()}, Note: ${llms.Note}`;
+                    llmsContainer.appendChild(llmDiv);
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    });
+</script>
+
 </body>
 </html>
