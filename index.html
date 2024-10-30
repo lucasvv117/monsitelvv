@@ -219,6 +219,34 @@
             .hamburger.active .bar:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
             }
+
+            table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        caption {
+            caption-side: top;
+            margin: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        
         }
     </style>
 </head>
@@ -296,8 +324,23 @@
         <p>© 2024 Comparateur LLM. Tous droits réservés.</p>
     </footer>
 
-    <h1>Liste des LLMs</h1>
-    <ul id="llm"></ul>
+    <h1 style="text-align: center;">Liste des LLMs</h1>
+
+    <!-- Tableau pour afficher les modèles -->
+    <table id="llmTable">
+        <caption>Modèles de Langage</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom du Modèle</th>
+                <th>Éditeur</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront insérées ici par JavaScript -->
+        </tbody>
+    </table>
 
     <script>
         // Configuration de Supabase
@@ -316,23 +359,23 @@
                 });
                 
                 const data = await response.json();
-                const LLMsList = document.getElementById('llm');
+                const tableBody = document.querySelector('#llmTable tbody');
 
-                // Vérification si l'élément LLMsList existe bien
-                if (!LLMsList) {
-                    console.error("L'élément avec l'ID 'llm' n'existe pas dans le DOM.");
-                    return;
-                }
-
-                // Affichage des modèles dans la liste
-                LLMsList.innerHTML = data.map(model => `<li>${model.id} - <li>${model.llm_name} - ${model.llm_editor} (Note: ${model.note})</li>`).join('');
-
+                // Remplir le tableau avec les données
+                tableBody.innerHTML = data.map(model => `
+                    <tr>
+                        <td>${model.id}</td>
+                        <td>${model.llm_name}</td>
+                        <td>${model.llm_editor}</td>
+                        <td>${model.note}</td>
+                    </tr>
+                `).join('');
             } catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
             }
         }
 
-        // Appel de la fonction une fois le DOM chargé
+        // Appel de la fonction lorsque le DOM est chargé
         document.addEventListener("DOMContentLoaded", fetchLLMs);
     </script>
 
