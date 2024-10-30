@@ -325,7 +325,7 @@
                 }
 
                 // Affichage des modèles dans la liste
-                LLMsList.innerHTML = data.map(model => `<li>${model.llm_name} - ${model.llm_editor} (Note: ${model.note})</li>`).join('');
+                LLMsList.innerHTML = data.map(model => `<li>${model.id} - <li>${model.llm_name} - ${model.llm_editor} (Note: ${model.note})</li>`).join('');
 
             } catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
