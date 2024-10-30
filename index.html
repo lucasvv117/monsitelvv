@@ -293,6 +293,24 @@
             </div>
         </section>
 
+        <h1 style="text-align: center;">Liste des LLMs</h1>
+
+<!-- Tableau pour afficher les modèles -->
+<table id="llmTable">
+    <caption>Modèles de Langage</caption>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom du Modèle</th>
+            <th>Éditeur</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les données seront insérées ici par JavaScript -->
+    </tbody>
+</table>
+
         <section class="carrousel-section">
             <h2>Les modèles populaires</h2>
             <div class="carrousel" id="carrousel">
@@ -320,27 +338,12 @@
         </section>
     </main>
 
+
     <footer class="footer">
         <p>© 2024 Comparateur LLM. Tous droits réservés.</p>
     </footer>
 
-    <h1 style="text-align: center;">Liste des LLMs</h1>
-
-    <!-- Tableau pour afficher les modèles -->
-    <table id="llmTable">
-        <caption>Modèles de Langage</caption>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom du Modèle</th>
-                <th>Éditeur</th>
-                <th>Note</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Les données seront insérées ici par JavaScript -->
-        </tbody>
-    </table>
+   
 
     <script>
         // Configuration de Supabase
