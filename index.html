@@ -296,6 +296,46 @@
         <p>© 2024 Comparateur LLM. Tous droits réservés.</p>
     </footer>
 
+    <h1>Liste des LLMs</h1>
+    <ul id="llm"></ul>
+
+    <script>
+        // Configuration de Supabase
+        const SUPABASE_URL = 'https://pxnjvbecmrfjiyrjiyff.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4bmp2YmVjbXJmaml5cmppeWZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzAyODAwNTQsImV4cCI6MjA0NTg1NjA1NH0.8H-SwLg1deQMe_YBsC-zRroHRgTEOwAfbIxd0jSDoOY';
+
+        // Fonction pour obtenir les LLMs
+        async function fetchLLMs() {
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/llm_list?select=*`, {
+                    headers: {
+                        apikey: SUPABASE_ANON_KEY,
+                        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                const LLMsList = document.getElementById('llm');
+
+                // Vérification si l'élément LLMsList existe bien
+                if (!LLMsList) {
+                    console.error("L'élément avec l'ID 'llm' n'existe pas dans le DOM.");
+                    return;
+                }
+
+                // Affichage des modèles dans la liste
+                LLMsList.innerHTML = data.map(model => `<li>${model.llm_name} - ${model.llm_editor} (Note: ${model.note})</li>`).join('');
+
+            } catch (error) {
+                console.error("Erreur lors de la récupération des données :", error);
+            }
+        }
+
+        // Appel de la fonction une fois le DOM chargé
+        document.addEventListener("DOMContentLoaded", fetchLLMs);
+    </script>
+
     <script>
         // Gestion du menu hamburger
         const hamburger = document.getElementById('hamburger');

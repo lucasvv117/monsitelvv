@@ -310,3 +310,28 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
+
+/* Styles pour le conteneur de la liste */
+#LLMsList {
+  display: block;                  /* Affiche la liste comme un bloc */
+  list-style-type: none;          /* Supprime les puces par défaut */
+  padding: 10px;                  /* Ajoute un peu de padding autour de la liste */
+  border: 1px solid #ccc;         /* Ajoute une bordure légère pour la visibilité */
+  background-color: #f9f9f9;      /* Couleur de fond pour distinguer la liste */
+  max-width: 600px;               /* Largeur maximale pour la liste */
+  margin: 20px auto;              /* Centre la liste sur la page avec un espacement en haut et en bas */
+}
+
+/* Styles pour chaque élément de la liste */
+#LLMsList li {
+  margin: 5px 0;                  /* Espace entre les éléments de la liste */
+  padding: 10px;                  /* Ajoute un peu de padding dans chaque élément */
+  background-color: #e9e9e9;      /* Couleur de fond des éléments de liste */
+  border-radius: 4px;             /* Bords arrondis pour un style doux */
+  transition: background-color 0.3s; /* Ajoute une transition pour le changement de couleur */
+}
+
+/* Effet de survol pour chaque élément */
+#LLMsList li:hover {
+  background-color: #d1d1d1;      /* Change la couleur de fond au survol */
+}

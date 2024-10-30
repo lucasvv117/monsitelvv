@@ -1,12 +1,14 @@
 const mysql = require('mysql');
 const express = require('express');
 const cors = require('cors');
-const port = 3001;
+
+const app = express();
 
 app.use(cors());
 
+const port = 3001;
 
-const app = express();
+
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root', // L’utilisateur MySQL par défaut est `root`
